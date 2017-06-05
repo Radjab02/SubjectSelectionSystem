@@ -1,0 +1,62 @@
+﻿
+	   
+  table,th,td  { 
+           
+           border-collapse: collapse; 		   
+	       align:center;
+           margin-top:0px;		   
+          }           
+	table.cart{margin-left:400px; border-collapse: collapse;  }
+      td {
+	       cell-padding:20px;
+	     }
+        
+		
+  html,body {
+	  width:90%; height:105%;background-color:white;}
+   div,main{width:960px;height:100%;
+          }
+
+
+
+
+
+	#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+	width:1000px;
+   }
+    nav {
+			float: left;
+			width: 200px;
+			line-height:30px;
+			background-color:#eeeeee;
+			height:300px;
+			padding:5px;	      
+			
+		}
+    #footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+	margin-top:250px;
+    padding:5px;
+    max-width:100%;	
+   }		 
+    
+     span#title{font-size:24px;}
+  
+    .space{
+          margin-left:335px;  
+         } 
+
+
+li a:hover:not(.active) {
+    text-decoration:underline;
+}
+  
+  
+  

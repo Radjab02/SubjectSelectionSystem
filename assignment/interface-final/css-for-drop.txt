@@ -1,0 +1,27 @@
+ #header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+	max-width:100%;
+   }
+   		nav {
+			float: left;
+			width: 200px;
+			line-height:30px;
+			background-color:#eeeeee;
+			height:270px;
+			padding:5px;	      
+			
+		} 
+		   .space{
+          margin-left:480px;   
+         }
+	#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+    max-width:100%;	
+   }		 

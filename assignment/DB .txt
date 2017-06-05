@@ -1,0 +1,83 @@
+create database trial
+CREATE TABLE Student (
+    Stud_ID VARCHAR(15) NOT NULL PRIMARY KEY,
+    First_Name VARCHAR(50) NOT NULL,
+    Last_Name VARCHAR(50) NOT NULL,
+    Password VARCHAR(10) NOT NULL ,
+	Stud_yr INTEGER(1) NOT NULL);
+
+CREATE TABLE mychart
+(Subject_ID VARCHAR(15) NOT NULL PRIMARY KEY,
+ Title VARCHAR(50) NOT NULL,
+ Time TIME NOT NULL);
+	
+
+CREATE TABLE Subject
+(Subject_ID VARCHAR(15) NOT NULL PRIMARY KEY,
+ Title VARCHAR(50) NOT NULL,
+ Batch_No VARCHAR(5) NOT NULL,
+ Date DATE NOT NULL,
+ Time TIME NOT NULL,
+ Year INTEGER(1) NOT NULL);
+ 
+
+CREATE TABLE Enroll
+(Stud_ID VARCHAR(15) NOT NULL,
+ Subject_ID VARCHAR(15) NOT NULL,
+ Status VARCHAR(20) NOT NULL,
+ CONSTRAINT pk_EnrollID PRIMARY KEY (Stud_ID,Subject_ID),
+ FOREIGN KEY (Stud_ID) REFERENCES student (Stud_ID) ON DELETE RESTRICT,
+ FOREIGN KEY (Subject_ID) REFERENCES subject (Subject_ID) ON DELETE RESTRICT);
+ 
+INSERT INTO student VALUES ('AB01','John','Doe','123',1);
+INSERT INTO student VALUES ('BA02','Jim','Carey','456',2); 
+INSERT INTO student VALUES ('XY03','Creeper','Boss','abc',3);
+
+INSERT INTO subject VALUES ('TAO1211','Computer Architecture and Organisation', '1211','2016-01-02', '8:00:00',1);
+INSERT INTO subject VALUES ('TDC1231','Data Communications and Networking', '1231','2016-01-03', '10:00:00',1);
+INSERT INTO subject VALUES ('TCP1121','Computer Programming', '1121','2016-01-02', '14:00:00',1);
+INSERT INTO subject VALUES ('TOP2121','Object Oriented Programming', '2121','2016-01-02', '16:00:00',1);
+INSERT INTO subject VALUES ('TDS2111','Data Structures and Algorithms', '2111','2016-02-02', '18:00:00',1);
+INSERT INTO subject VALUES ('TDB1131','Database Systems', '1131','2016-02-02', '10:00:00',1);
+
+
+INSERT INTO subject VALUES ('TMG1111','Management', '1111','2016-11-01', '8:00:00',2);
+INSERT INTO subject VALUES ('TCE2321','Computer Networks', '2321','2016-10-02', '10:00:00',2);
+INSERT INTO subject VALUES ('TIS2211','System Analysis & Design', '2211','2016-11-02', '2:00:00',2);;
+INSERT INTO subject VALUES ('TIS2251','Management Information Systems', '2251','2016-09-02', '16:00:00',2);
+INSERT INTO subject VALUES ('TCS2411','Software Engineering Fundamentals', '2411','2016-12-12', '8:00:00',2);
+INSERT INTO subject VALUES ('TEC1361','Economics', '1361','2016-02-12', '10:00:00',2);
+INSERT INTO subject VALUES ('TME2361','Marketing and E-Commerce', '2361','2016-03-03', '1:00:00',2);
+
+
+INSERT INTO subject VALUES ('TPM3541','IT Project Management Methods & Tools', '3541','2016-05-04', '8:00:00',3);
+INSERT INTO subject VALUES ('TPR3321','Project', '3321','2016-04-04', '11:00:00',3);
+INSERT INTO subject VALUES ('TSC2111','Information Systems Audit', '1121','2016-08-12', '14:00:00',3);
+INSERT INTO subject VALUES ('THI3461','Human-Computer Interaction', '3461','2016-08-008', '16:00:00',3);
+INSERT INTO subject VALUES ('TKM1291','Introduction to Knowledge Management', '1291','2016-12-12', '8:00:00',3);
+INSERT INTO subject VALUES ('TAC1311','Financial Accounting I', '1311','2016-06-06', '10:30:00',3);
+INSERT INTO subject VALUES ('TER2611','Entreprise Resource Planning', 'TER2611','2016-7-02', '13:00:00',3);
+
+INSERT INTO enroll VALUES ('AB01','TAO1211','Inactive');
+INSERT INTO enroll VALUES ('AB01','TDC1231','Inactive');
+INSERT INTO enroll VALUES ('AB01','TCP1121','Inactive');
+INSERT INTO enroll VALUES ('AB01','TDS2111','Inactive');
+INSERT INTO enroll VALUES ('AB01','TDB1131','Inactive');
+INSERT INTO enroll VALUES ('AB01','TOP2121','Inactive');
+
+
+INSERT INTO enroll VALUES ('BA02','TMG1111','Inactive');
+INSERT INTO enroll VALUES ('BA02','TCE2321','Inactive');
+INSERT INTO enroll VALUES ('BA02','TIS2211','Inactive');
+INSERT INTO enroll VALUES ('BA02','TIS2251','Inactive');
+INSERT INTO enroll VALUES ('BA02','TCS2411','Inactive');
+INSERT INTO enroll VALUES ('BA02','TEC1361','Inactive');
+INSERT INTO enroll VALUES ('BA02','TME2361','Inactive');
+
+INSERT INTO enroll VALUES ('XY03','TPM3541','Inactive');
+INSERT INTO enroll VALUES ('XY03','TPR3321','Inactive');
+INSERT INTO enroll VALUES ('XY03','TSC2111','Inactive');
+INSERT INTO enroll VALUES ('XY03','THI3461','Inactive');
+INSERT INTO enroll VALUES ('XY03','TKM1291','Inactive');
+INSERT INTO enroll VALUES ('XY03','TAC1311','Inactive');
+INSERT INTO enroll VALUES ('XY03','TER2611','Inactive');
